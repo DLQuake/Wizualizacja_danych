@@ -1,6 +1,8 @@
 import datetime
+import locale
 
 def dzien_tygodnia_dla_dowolnej_daty(data):
+    locale.setlocale(locale.LC_ALL, 'pl_PL')
     return data.strftime("%A")
 
 def dzien_tygodnia_na_podstawie_numeru_dnia_tygodnia(nr_tygodnia):
@@ -22,9 +24,3 @@ def skrocone_nazwy_dni_tygodnia(nazwa):
         return 'sob'
     elif nazwa=='niedziela':
         return 'niedz'
-
-
-def slownik_par(rok, miesiac):
-    pom = datetime.datetime(rok, miesiac)
-    slownik={pom.strftime("%d"): pom.strftime("%A")}
-    return slownik
